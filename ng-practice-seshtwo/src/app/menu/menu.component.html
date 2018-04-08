@@ -1,0 +1,8 @@
+
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <ul class="nav navbar-nav">
+        <li class="nav-item active" *ngFor="let navlink of navlinks">
+          <a class="nav-link" routerLink="{{navlink.route}}" > {{navlink.name}} </a>
+        </li>
+      </ul>
+</nav>
