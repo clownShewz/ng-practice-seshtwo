@@ -8,6 +8,8 @@ import { MenuComponent } from '../menu/menu.component';
 import { LoginComponent } from '../login/login.component';
 import { AdminComponent } from 'app/admin/admin.component';
 import { AboutComponent } from 'app/about/about.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormModule } from 'app/form/form.module';
 
 
 const coreRoutes: Routes = [
@@ -23,7 +25,8 @@ const coreRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(coreRoutes, { enableTracing: true})
+    RouterModule.forRoot(coreRoutes, { enableTracing: true}),
+    ReactiveFormsModule
   ],
   declarations: [CoreComponent,
     HomeComponent,
