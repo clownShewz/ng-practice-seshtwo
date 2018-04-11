@@ -1,3 +1,35 @@
-<p>
-  form works!
-</p>
+<div class="input-group">
+   <h4>Reactive Form</h4>
+
+   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+     <div class="form-group">
+        <label>First  Name:
+          <input type="text" formControlName="firstName" class="form-control">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name:
+          <input type="text" formControlName="lastName" class="form-control">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label> Street Address
+          <input type="text" formControlName="street" class="form-control">
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="center-block"> City:
+          <select formControlName="city">
+            <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+          </select>
+        </label>
+      </div>
+
+        <button type="submit" class="btn btn-default" [disabled]="!form.valid"> Submit </button>
+   </form>
+   <p>Model: {{form.value | json}}</p>
+   <p>Valid: {{form.valid | json}} </p>
+</div>
